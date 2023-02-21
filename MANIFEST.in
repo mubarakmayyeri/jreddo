@@ -1,0 +1,4 @@
+include jreddo/schema.sql
+graft jreddp/static
+graft jreddo/templates
+global-exlude *.pyc
