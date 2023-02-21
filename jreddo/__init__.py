@@ -32,4 +32,9 @@ def create_app(test_config=None):
     return 'Hello, World!'
   
   
+  # calling register function from db
+  from . import db
+  db.init_app(app)
+  
+  
   return app
