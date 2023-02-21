@@ -8,7 +8,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from jreddo.db import get_db
 
-bp = Blueprint('atuh', __name__, url_prefix='/auth')
+bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 
 # register view
@@ -50,7 +50,7 @@ def login():
     db = get_db()
     error = None
     user = db.execute(
-      'SELECT * FROM user WHERE username = ?', (username,).fetchone()
+      'SELECT * FROM user WHERE username = ?', (username,)
     ).fetchone()
     
     if user is None:
